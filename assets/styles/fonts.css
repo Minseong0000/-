@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+
+/* 'Pretendard', san-serif */
+@import url(./pretendard-subset.css);
+
+/*  "FuturaPT", sans-serif; */
+@font-face {
+	font-family: 'FuturaPT';
+	font-weight: 900;
+	src: url(../fonts/FuturaPT-Bold.woff2) format('woff2');
+}
+
+/* 'NanumSquare', sans-serif */
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+
+/* 'ProximaNova', sans-serif */
+

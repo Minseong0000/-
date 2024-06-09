@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="46" viewBox="0 0 14 46">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_148831" data-name="사각형 148831" width="14" height="14" transform="translate(-24399 -18877)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_169823" data-name="그룹 169823" transform="translate(10577 -3478)">
+    <g id="마스크_그룹_145" data-name="마스크 그룹 145" transform="translate(13822 22355)" clip-path="url(#clip-path)">
+      <g id="Icon_feather-arrow-right" data-name="Icon feather-arrow-right" transform="translate(-24400.461 -18867.959) rotate(-45)">
+        <path id="패스_83555" data-name="패스 83555" d="M0,0H14.374" transform="translate(0 4.539)" fill="none" stroke="#242424" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="패스_83556" data-name="패스 83556" d="M0,0,4.539,4.539,0,9.078" transform="translate(10.314)" fill="none" stroke="#242424" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+    <g id="마스크_그룹_145-2" data-name="마스크 그룹 145" transform="translate(13822 22371)" clip-path="url(#clip-path)">
+      <g id="Icon_feather-arrow-right-2" data-name="Icon feather-arrow-right" transform="translate(-24400.461 -18867.959) rotate(-45)">
+        <path id="패스_83555-2" data-name="패스 83555" d="M0,0H14.374" transform="translate(0 4.539)" fill="none" stroke="#1f3bd9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="패스_83556-2" data-name="패스 83556" d="M0,0,4.539,4.539,0,9.078" transform="translate(10.314)" fill="none" stroke="#1f3bd9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+    <g id="마스크_그룹_145-3" data-name="마스크 그룹 145" transform="translate(13822 22387)" clip-path="url(#clip-path)">
+      <g id="Icon_feather-arrow-right-3" data-name="Icon feather-arrow-right" transform="translate(-24400.461 -18867.959) rotate(-45)">
+        <path id="패스_83555-3" data-name="패스 83555" d="M0,0H14.374" transform="translate(0 4.539)" fill="none" stroke="#fafafa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="패스_83556-3" data-name="패스 83556" d="M0,0,4.539,4.539,0,9.078" transform="translate(10.314)" fill="none" stroke="#fafafa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

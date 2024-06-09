@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+header {
+  background-color: transparent;
+  position: relative;
+}
+
+.header {
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  margin: 0 auto;
+  height: 80px;
+  position: absolute;
+  width: 100%;
+}
+.gnb {
+  gap: 25px;
+  color: var(--color-white);
+  font-family: var(--font-en-pn);
+  font-size: 18px;
+}
+.my-page {
+  border: none;
+  background-color: transparent;
+  
+}
+.my-page a {
+  background-color: transparent;
+  border: 1.5px solid var(--color-white);
+  padding: 10px 24px;
+  border-radius: 36px;
+  margin-left: 25px;
+  color: var(--color-white);
+}
+.video-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+.video-wrapper .youtube {
+  aspect-ratio: 16/9;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  position: relative;
+  scale: 1.2;
+}
+.video-wrapper .main-inner {
+  padding: 0 136px;
+  /* position: relative; */
+  width: 100% ;
+  max-width: 1600px;
+  height: 100%;
+  margin: 0 auto;
+}
+.video-wrapper .main-inner .main-video-text {
+  position: absolute;
+  color: var(--color-white);
+  font-family: var(--font-en-ft);
+  font-size: 193px;
+  bottom: 100px;
+  vertical-align: baseline;
+}
+.video-wrapper .main-inner .main-video-text span {
+  display: block;
+  line-height: .8;
+  font-weight: 700;
+  letter-spacing: -0.5rem;
+}
+.video-wrapper .main-inner .main-video-widget {
+  color: var(--color-white);
+  position: absolute;
+  top: 70%; left: 5%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  text-align: center;
+}
+/* .video-wrapper .main-inner .main-video-widget .home img{
+  width: 22px; height: 22px;
+} */
+.video-wrapper .main-inner .main-video-widget .paging-btn {
+  flex-direction: column;
+  justify-content: center;
+}
+.video-wrapper .main-inner .main-video-widget .paging-btn .btn-prev {
+  transform: rotate(180deg);
+}
+.video-wrapper .main-inner .scroll-alert {
+  position: absolute;
+  color: var(--color-white);
+  right: 0; bottom: 10%;
+}
+.video-wrapper .main-inner .scroll-alert p {
+  transform:rotate(270deg);
+}
+.video-wrapper .main-inner .video-text-second {
+  position: absolute;
+  color: var(--color-white);
+  font-family: var(--font-en-ft);
+  bottom: 100px;
+  vertical-align: baseline;
+  opacity: 0;
+}
+/* =================================================================== */
+main .job {
+  height: 100vh;
+  padding: 150px 136px 75px;
+}
+

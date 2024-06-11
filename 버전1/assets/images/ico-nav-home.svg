@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="70" viewBox="0 0 22 70">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_150704" data-name="사각형 150704" width="22" height="22" transform="translate(-9191 -12908)" stroke="#242424" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect id="사각형_150704-3" data-name="사각형 150704" width="22" height="22" transform="translate(-9191 -12908)" fill="none" stroke="#242424" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_166226" data-name="그룹 166226" transform="translate(24088 -9418)">
+    <g id="마스크_그룹_185" data-name="마스크 그룹 185" transform="translate(-14897 22326)" clip-path="url(#clip-path)">
+      <path id="빼기_19" data-name="빼기 19" d="M-4570-10909h-6v-5.668h-6v5.668h-6v-11l9-7,9,7Z" transform="translate(-4601.002 -1979.001)" fill="none" stroke="#242424" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+    <g id="마스크_그룹_185-2" data-name="마스크 그룹 185" transform="translate(-14897 22350)" clip-path="url(#clip-path)">
+      <path id="빼기_19-2" data-name="빼기 19" d="M-4570-10909h-6v-5.668h-6v5.668h-6v-11l9-7,9,7Z" transform="translate(-4601.002 -1979.001)" fill="#b71a1a" stroke="#b71a1a" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+    <g id="마스크_그룹_185-3" data-name="마스크 그룹 185" transform="translate(-14897 22374)" clip-path="url(#clip-path-3)">
+      <path id="빼기_19-3" data-name="빼기 19" d="M-4570-10909h-6v-5.668h-6v5.668h-6v-11l9-7,9,7Z" transform="translate(-4601.002 -1979.001)" fill="none" stroke="#fafafa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

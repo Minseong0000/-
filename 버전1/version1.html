@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>title</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <!-- reset -->
+  <link rel="stylesheet" href="./assets/styles/reset.css">
+  <!-- fonts -->
+  <link rel="stylesheet" href="./assets/styles/fonts.css">
+  <!-- global css -->
+  <link rel="stylesheet" href="./global.css">
+  <!-- index style -->
+  <link rel="stylesheet" href="./version1.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="./assets/scripts/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer src="version1.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header flex-wrapper">
+      <h1><a href="#"><img src="./assets/images/logo_w.svg" alt="로고"></a></h1>
+      <nav class="gnb-wrapper flex-wrapper">
+        <ul class="gnb flex-wrapper capitalize">
+          <li><a href="#">jobs</a></li>
+          <li><a href="#">life</a></li>
+          <li><a href="#">people</a></li>
+          <li><a href="#">story</a></li>
+          <li><a href="#">guide</a></li>
+        </ul>
+        <button class="my-page"><a href="#">My Page</a></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="video-wrapper section">
+      <div class="video-container">
+        <div class="video-container2">
+          <iframe
+            src="https://www.youtube.com/embed/-fvEJgCNURQ?si=UYUuThEQAo5Uj6AN&amp;controls=0&loop=1&mute=1&autoplay=1"
+            title="Hyundai" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; loop;"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="youtube"></iframe>
+        </div>
+      </div>
+      <div class="main-inner">
+        <div class="main-video-text uppercase">
+          <span>hey</span>
+          <span>move</span>
+          <span>hyundai</span>
+          <span>mobis</span>
+        </div>
+
+        <div class="main-video-widget flex-wrapper">
+          <button class="home">
+            <i class="nav-home"></i>
+          </button>
+          <button class="symbol">
+            <i class="nav-symbol"></i>
+          </button>
+          <div class="progress-bar">
+            <span class="current-page">
+              01
+            </span>
+            <div class="progress">
+              <div class="bar"></div>
+              <ul class="section-name uppercase">
+                <li>01. jobs</li>
+                <li>02. life</li>
+                <li>03. people</li>
+                <li>04. story</li>
+              </ul>
+            </div>
+            <span class="total-page">
+              04
+            </span>
+          </div>
+          <div class="paging-btn flex-wrapper">
+            <button class="btn-prev">
+              <i class="arrow-left"></i>
+            </button>
+            <button class="btn-next">
+              <i class="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="scroll-progress">
+          <p>Scroll down</p>
+        </div>
+
+        <div class="video-text-second flex-wrapper">
+          <div class="sec-left">
+            <p>지금, 당신의 가능성이<br>가장 크게 빛날 수 있는 자리를 확인해보세요</p>
+            <p class="now"><span>15</span>개의 채용 공고가 현재 진행중입니다.</p>
+          </div>
+          <p class="find">나에게 맞는<br>채용 공고 찾기</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="job uppercase">
+      <h2> jobs</h2>
+      <div class="text-des flex-wrapper">
+        <div class="main-des">
+          <p>
+            모빌리티의 미래로 향하는
+            <br>
+            이 가슴 뛰는 여정에
+            <br>
+            함께 하세요
+          </p>
+        </div>
+        <div class="sub-des">
+          <p>내일의 모빌리티를 만들어 갈 도전적이고 협력적인, <br> 창의적이며 융합적 사고를 갖춘 여러분을 기다립니다.</p>
+        </div>
+      </div>
+
+      <div class="positions">
+        <h2>apply now</h2>
+        <div class="position-title flex-wrapper">
+          <h3>최신 채용공고</h3>
+          <span class="cur"></span>
+          <span class="total"></span>
+          <button class="prev"></button>
+          <button class="next"></button>
+        </div>
+
+        <div class="recruitment">
+          <div #swiperRef="" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="job-des flex-wrapper">
+                  <div class="due">
+                    D-7
+                  </div>
+                  <p>경력-관리직</p>
+                </div>
+                <div class="job-title">
+                  <p>구매(램프전장품/에어백/센서)</p>
+                </div>
+                <div class="job-sec flex-wrapper">
+                  <p>통합솔루션 부문</p>
+                  <p>구매/구매개발</p>
+                  <p>역삼본사</p>
+                </div>
+                <div class="period">
+                  <p class="date">2024-06-03 - 2024-06-17</p>
+                </div>
+              </div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 4</div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </section>
+
+  </main>
+
+  <footer></footer>
+</body>
+
+</html>

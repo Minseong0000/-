@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19" height="40" viewBox="0 0 19 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_148844" data-name="사각형 148844" width="19" height="12" transform="translate(-24392 -18790)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_2576" data-name="그룹 2576" transform="translate(20848 20035)">
+    <g id="그룹_2574" data-name="그룹 2574" transform="translate(-2 -18)">
+      <g id="마스크_그룹_154" data-name="마스크 그룹 154" transform="translate(3546 -1213)" clip-path="url(#clip-path)">
+        <g id="Icon_feather-arrow-right" data-name="Icon feather-arrow-right" transform="translate(-24375.146 -18779.338) rotate(180)">
+          <path id="패스_26" data-name="패스 26" d="M0,0H14.374" transform="translate(0 4.539)" fill="none" stroke="#cc1424" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <path id="패스_83359" data-name="패스 83359" d="M0,0,4.539,4.539,0,9.078" transform="translate(10.314)" fill="none" stroke="#cc1424" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+      </g>
+      <g id="마스크_그룹_157" data-name="마스크 그룹 157" transform="translate(3546 -1227)" clip-path="url(#clip-path)">
+        <g id="Icon_feather-arrow-right-2" data-name="Icon feather-arrow-right" transform="translate(-24375.146 -18779.338) rotate(180)">
+          <path id="패스_83559" data-name="패스 83559" d="M0,0H14.374" transform="translate(0 4.539)" fill="none" stroke="#242424" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <path id="패스_83560" data-name="패스 83560" d="M0,0,4.539,4.539,0,9.078" transform="translate(10.314)" fill="none" stroke="#242424" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+    <g id="마스크_그룹_160" data-name="마스크 그룹 160" transform="translate(3544 -1217)" clip-path="url(#clip-path)">
+      <g id="Icon_feather-arrow-right-3" data-name="Icon feather-arrow-right" transform="translate(-24375.146 -18779.338) rotate(180)">
+        <path id="패스_83565" data-name="패스 83565" d="M0,0H14.374" transform="translate(0 4.539)" fill="none" stroke="#fafafa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="패스_83566" data-name="패스 83566" d="M0,0,4.539,4.539,0,9.078" transform="translate(10.314)" fill="none" stroke="#fafafa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>slideEx2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+     body {
+      margin: 0;
+    }
+
+    .simple-slide {
+      width: 100%;
+      margin: 0 auto;
+      height: 90vh;
+      position: relative;
+      
+    }
+
+    .simple-slide ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .simple-slide .slide-wrapper {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .simple-slide .slide-wrapper li img {
+      width: 100vw;
+    }
+
+    .simple-slide .slide-button {
+      position: absolute;
+      bottom: 10px;
+      left: calc(50% - 100px);
+      display: flex;
+      justify-content: space-between;
+      width: 200px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .simple-slide .slide-button li {
+      cursor: pointer;
+      user-select: none;
+      background-color: rgba(255, 255, 255, 0.6);
+      width: 40px; height: 10px;
+    }
+
+    .simple-slide .slide-button li:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }   
+  
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <div class="simple-slide">
+    <ul class="slide-wrapper">
+      <li><img src="https://placehold.co/1000x600/FFFF80/ddd?text=img1" alt="이미지"></li>
+      <li><img src="https://placehold.co/1000x600/FFFF80/ddd?text=img2" alt="이미지"></li>
+      <li><img src="https://placehold.co/1000x600/FFFF80/ddd?text=img3" alt="이미지"></li>
+      <li><img src="https://placehold.co/1000x600/FFFF80/ddd?text=img4" alt="이미지"></li>
+    </ul>
+    <ul class="slide-button">
+      <li class="btn"></li>
+      <li class="btn"></li>
+      <li class="btn"></li>
+      <li class="btn"></li>
+    </ul>
+  </div>
+  <script>
+    let idx = 0;
+
+    function buttonColor(e) {
+      const idx = $(e.target).index();
+      $('.slide-button li').eq(idx).css({ backgroundColor : 'blue' });
+      $('.side-button li').eq(!idx).css({ backgroundColor : '#fff' });
+    }
+
+    function nextSlide() {
+      const items = $('.slide-wrapper li').length;
+      if(idx < items){
+        $('.slide-wrapper').animate({marginLeft: -100 * idx +'%'}); 
+        idx++;
+      }   
+      if(idx >= items) {
+        idx = 0;
+      }
+    }
+
+
+   $('.slide-button li').on('click', (e) => {
+      const idx = $(e.target).index();
+      $('.slide-wrapper').animate({
+        marginLeft: -100 * idx + '%' }, 300 ,'linear');
+      // $('.slide-button li').eq(idx).css({backgroundColor : 'blue'});
+    });
+
+   $('.slide-button li').on('click', buttonColor); 
+    setInterval(nextSlide, 3000);
+
+    
+
+  </script>
+</body>
+
+</html>

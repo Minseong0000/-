@@ -74,24 +74,95 @@ $(window).on("scroll", () => {
   }
 });
 
-// swiper
+// slick-slider
 
-var swiper = new Swiper(".swiper-container", {
-  slidesPerView: 4,
-  spaceBetween: 30,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  autoplay: {
-    delay: 1000,
-    disableOnInteraction: false,
-  },
-  effect: "slide", // Can be 'slide', 'fade', 'cube', 'coverflow', 'flip'
-  speed: 500, // Transition speed
+$(document).ready(function () {
+  var $slickSlider = $(".slick-slider");
+
+  $slickSlider.slick({
+    dots: false,
+    infinite: false,
+    speed: 1500,
+    slidesToShow: 1,
+    slidesToScroll: 5,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    prevArrow: $(".slick-prev"),
+    nextArrow: $(".slick-next"),
+    cssEase: "ease",
+    variableWidth: true,
+  });
+
+  $slickSlider.on("afterChange", function (event, slick, currentSlide) {
+    if (currentSlide === slick.$slides.length - 3) {
+      setTimeout(function () {
+        $slickSlider.slick("slickGoTo", 0); // Slide back to the beginning
+      }, 2000); // Optional delay
+    }
+  });
+});
+
+// background-change
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  const sectionLife = document.querySelector(".main-life");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          document.body.style.backgroundColor = "#1F3BD9";
+        } else {
+          document.body.style.backgroundColor = "#242424";
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-50% 0px -50% 0px",
+    }
+  );
+
+  observer.observe(sectionLife);
+
+  /*   const bottomObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          document.body.style.backgroundColor = "#242424";
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "0px 0px -50% 0px",
+    }
+  );
+
+  bottomObserver.observe(sectionLife); */
+});
+
+//life-typo
+document.addEventListener("DOMContentLoaded", (event) => {
+  const lifeTypo = document.querySelector(".life-inner .life-typo p");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          lifeTypo.style.opacity = "1";
+        } else {
+          lifeTypo.style.opacity = "0";
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-50% 0px -33% 0px",
+    }
+  );
+
+  observer.observe(lifeTypo);
 });

@@ -3,64 +3,46 @@
 
 <head>
   <meta charset="utf-8">
-  <title>progress-bar</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Text Fill on Scroll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
+      height: 200vh;
+      /* to enable scrolling */
       margin: 0;
-      height: 400vh;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #242424;
+      font-family: Arial, sans-serif;
     }
 
-    .progress-bar-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 122px;
-      height: 5px;
-      background-color: #999;
-      transform: rotate(90deg);
-      position: fixed;
-      top: 50%;
-      /* border-radius: 50%; */
-    }
-
-    .progress-bar {
-      height: 100%;
-      width: 0;
-      background-image: linear-gradient(to left, #FF9F66, #FF0080);
-      /* border-radius: 50%; */
+    .text {
+      font-size: 3em;
+      font-weight: bold;
+      color: transparent;
+      background-image: linear-gradient(to right, #f06, #4a90e2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      transition: color 0.5s ease;
     }
   </style>
-  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
-
 </head>
 
 <body>
-  <div class="progress-bar-wrapper">
-    <div class="progress-bar"></div>
-  </div>
+  <div class="text">Scroll to Fill Text</div>
+
   <script>
-    const progress = () => {
-      // 문서 전체 높이. 스크롤바로 숨겨진 부분까지 포함
-      const scrollHtjQ = $(document).height();
-      const scrollHtJs = document.documentElement.scrollHeight;
-      // console.log(scrollHtjQ, scrollHtJs);
+    window.addEventListener('scroll', () => {
+      const textElement = document.querySelector('.text');
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
 
-      // 스크롤바 미포함 브라우저 내부 높이
-      const clientHtjQ = $(window).height();
-      const clientHtJs = document.documentElement.clientHeight;
-      console.log(clientHtjQ, clientHtJs);
+      const scrollPercentage = scrollPosition / (documentHeight - windowHeight);
 
-      const total = scrollHtJs - clientHtJs;
-
-      const preWt = (scrollY / total) * 100;
-
-      $('.progress-bar').css({ width: preWt + '%' });
-    }
-
-    // addEventListener('scroll', () => {})
-    $(window).on('scroll', () => {
-      requestAnimationFrame(progress)
+      textElement.style.color = `rgba(0, 0, 0, ${scrollPercentage})`;
     });
   </script>
 </body>

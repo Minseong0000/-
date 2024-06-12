@@ -13,16 +13,17 @@
   <link rel="stylesheet" href="./global.css">
   <!-- index style -->
   <link rel="stylesheet" href="./index.css">
-  <!-- swiper css -->
-  <link rel="stylesheet" href="./assets/scripts/swiper-bundle.min.css">
-  <!-- swiper js -->
-  <script src="./assets/scripts/swiper-bundle.min.js"></script>
+  <!-- slick slider css -->
+  <link rel="stylesheet" href="./assets/scripts/slick.min.css">
+  <link rel="stylesheet" href="./assets/scripts/slick-theme.min.css">
   <!-- gsap -->
   <script src="./assets/scripts/gsap.min.js"></script>
   <!-- scrolltrigger -->
   <script src="./assets/scripts/ScrollTrigger.min.js"></script>
   <!-- jquery -->
   <script src="./assets/scripts/jquery-3.7.1.min.js"></script>
+  <!-- slick slider js -->
+  <script src="./assets/scripts/slick.min.js"></script>
   <!-- index js -->
   <script defer src="./index.js"></script>
 </head>
@@ -1826,6 +1827,7 @@
       </div>
     </section>
 
+    <!-- recuitment -->
     <section class="jobs uppercase">
       <h2>jobs</h2>
       <div class="jobs-text-wrapper flex-wrapper">
@@ -1841,26 +1843,392 @@
       <div class="apply-wrapper">
         <h2>apply now</h2>
         <p>최신 채용공고</p>
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
+        <div class="slide-wrapper">
+
+          <div class="slide-control flex-wrapper">
+            <div class="page-num">
+              <span>01</span>
+              <span>/</span>
+              <span>12</span>
+            </div>
+            <div class="slider-arrow flex-wrapper">
+              <button class="slick-prev">
+                <i class="ico-arrow-left"></i>
+              </button>
+              <button class="slick-next">
+                <i class="ico-arrow-right"></i>
+              </button>
+            </div>
+
           </div>
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
-          <!-- Add Navigation -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="slick-slider">
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-solution.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-5</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  구매(램프전장품/에어백/센서)
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>통합솔루션부문</p>
+                    <p>구매/구매개발</p>
+                    <p>역삼본사</p>
+                  </div>
+                  <p class="date">2024-06-03 - 2024-06-17</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-solution.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-5</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  구매(모듈부품)
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>통합솔루션부문</p>
+                    <p>구매/구매개발</p>
+                    <p>역삼본사</p>
+                  </div>
+                  <p class="date">2024-06-03 - 2024-06-17</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-solution.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-5</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  구매(모터/제어부품)
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>통합솔루션부문</p>
+                    <p>구매/구매개발</p>
+                    <p>역삼본사</p>
+                  </div>
+                  <p class="date">2024-06-03 - 2024-06-17</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-solution.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-5</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  품질점검(SW)
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>통합솔루션부문</p>
+                    <p>품질</p>
+                    <p>신차품질</p>
+                    <p>의왕연구소</p>
+                  </div>
+                  <p class="date">2024-06-03 - 2024-06-17</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-solution.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-5</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  품질분석(IVI)
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>통합솔루션부문</p>
+                    <p>품질</p>
+                    <p>품질보증</p>
+                    <p>의왕연구소</p>
+                  </div>
+                  <p class="date">2024-06-03 - 2024-06-17</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-solution.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-5</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  스마트팩토리(물류)
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>통합솔루션부문</p>
+                    <p>생산</p>
+                    <p>생산기술</p>
+                    <p>의왕연구소</p>
+                  </div>
+                  <p class="date">2024-06-03 - 2024-06-17</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-solution.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-5</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  생산기술(모듈)
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>통합솔루션부문</p>
+                    <p>생산</p>
+                    <p>생산기술</p>
+                    <p>의왕연구소</p>
+                  </div>
+                  <p class="date">2024-06-03 - 2024-06-17</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-solution.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-5</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  생산기술(PE시스템)
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>통합솔루션부문</p>
+                    <p>생산</p>
+                    <p>생산기술</p>
+                    <p>의왕연구소</p>
+                  </div>
+                  <p class="date">2024-06-03 - 2024-06-17</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-solution.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-5</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  생산기술(배터리)
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>통합솔루션부문</p>
+                    <p>생산</p>
+                    <p>생산기술</p>
+                    <p>의왕연구소</p>
+                  </div>
+                  <p class="date">2024-06-03 - 2024-06-17</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-solution.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-5</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  품질보증(ADAS)
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>통합솔루션부문</p>
+                    <p>품질</p>
+                    <p>품질보증</p>
+                    <p>진천공장</p>
+                  </div>
+                  <p class="date">2024-06-03 - 2024-06-17</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-innovation.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-6</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  IT 보안
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>경영혁신부문</p>
+                    <p>지원</p>
+                    <p>보안/정보보호</p>
+                    <p>역삼본사</p>
+                  </div>
+                  <p class="date">2024-06-05 - 2024-06-18</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="picto">
+                  <div class="circle flex-wrapper">
+                    <img src="./assets/images/job-picto-innovation.svg" alt="">
+                  </div>
+                </div>
+                <div class="top flex-wrapper">
+                  <p class="D-day">D-6</p>
+                  <p class="career">경력-관리직</p>
+                </div>
+                <p class="title">
+                  ESG 기획
+                </p>
+                <div class="bottom">
+                  <div class="info-wrapper flex-wrapper">
+                    <p>경영혁신부문</p>
+                    <p>기획</p>
+                    <p>ESG기획</p>
+                    <p>역삼본사</p>
+                  </div>
+                  <p class="date">2024-06-05 - 2024-06-18</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <p>
+                전체
+                <br>
+                채용공고
+                <br>
+                보러가기
+              </p>
+            </div>
+
+
+          </div>
+
+
+
         </div>
+
         <div class="jobs-btn-wrapper">
-          <p>전체 채용공고 보러가기</p>
+          <a href="#">전체 채용공고 보러가기
+            <span class="ico-circle">
+              <i class="ico-arrow-link"></i>
+            </span>
+          </a>
         </div>
       </div>
 
     </section>
+
+    <!-- life -->
+    <section class="main-life">
+      <div class="life-inner">
+        <div class="life-typo">
+          <p>
+            HEY
+            <br>
+            MOVE
+          </p>
+        </div>
+        <div class="life-title-wrapper flex-wrapper">
+          <div class="title-left">
+            <p class="main-entitle uppercase">Life</p>
+            <a href="#" class="btn-culture">문화와 생활 보러가기</a>
+          </div>
+          <div class="title-right">
+            <p class="main-title">
+              빛나는 ‘내’가 모여, <br>
+              더 나은 ‘우리’로 나아갑니다.
+            </p>
+            <p class="main-subtitle">
+              현대모비스는 유연하고 스마트한 기업 문화 아래, <br>
+              일과 삶의 균형을 중시하며 구성원의 성장을 <br>
+              지원하고 있습니다.
+            </p>
+          </div>
+        </div>
+        <div class="motion-wrapper">
+
+          <div class="motion-container first">
+            <p class="typo uppercase">flexible</p>
+            <div class="img-wrapper first"></div>
+            <div class="img-wrapper second"></div>
+            <div class="img-wrapper third"></div>
+          </div>
+
+          <div class="motion-container second"></div>
+          <div class="motion-container third"></div>
+        </div>
+      </div>
+    </section>
+
 
   </main>
   <footer>
@@ -1876,6 +2244,7 @@
         <span id="progress-value"></span>
       </div>
     </div>
+    <div class="empty"></div>
   </footer>
 
 </body>

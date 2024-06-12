@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>Background Change Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      transition: background-color 0.5s ease;
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      color: white;
+    }
+
+    .section-1 {
+      background-color: #242424;
+    }
+
+    .section-2 {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="section section-1">
+    Section 1
+  </div>
+  <div class="section section-2">
+    Section 2
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const section2 = document.querySelector('.section-2');
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            document.body.style.backgroundColor = '#f0f0f0';
+          } else {
+            document.body.style.backgroundColor = '#242424';
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0,
+        rootMargin: '-50% 0px -50% 0px'
+      });
+
+      observer.observe(section2);
+    });
+  </script>
+</body>
+
+</html>

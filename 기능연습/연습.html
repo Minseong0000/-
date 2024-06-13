@@ -1,48 +1,80 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Text Fill on Scroll</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       height: 200vh;
-      /* to enable scrolling */
+      /* Make the page scrollable */
+      background: #fff;
       margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #242424;
       font-family: Arial, sans-serif;
     }
 
     .text {
-      font-size: 3em;
+      font-size: 48px;
       font-weight: bold;
-      color: transparent;
-      background-image: linear-gradient(to right, #f06, #4a90e2);
+      background-image: linear-gradient(to right, red 0%, transparent 0%);
       -webkit-background-clip: text;
-      background-clip: text;
-      transition: color 0.5s ease;
+      -webkit-text-stroke: 2px;
+      -webkit-text-stroke-color: #000;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+      /* Ensure text stays on one line */
+      transition: background-position 0.3s;
+    }
+
+    .trigger-section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   </style>
+  <title>Scroll Change Text Color</title>
 </head>
 
 <body>
-  <div class="text">Scroll to Fill Text</div>
+  <div class="trigger-section" id="trigger-section">
+    <div class="text" id="text">Scroll to fill me up!</div>
+  </div>
+  <div style="height: 100vh;"></div>
 
   <script>
-    window.addEventListener('scroll', () => {
-      const textElement = document.querySelector('.text');
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
+    document.addEventListener('DOMContentLoaded', () => {
+      const textElement = document.getElementById('text');
+      const triggerSection = document.getElementById('trigger-section');
+      let observerOptions = {
+        root: null, // Use the viewport as the container
+        threshold: [0, 1] // Trigger at the start and end of the section
+      };
 
-      const scrollPercentage = scrollPosition / (documentHeight - windowHeight);
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            window.addEventListener('scroll', handleScroll);
+          } else {
+            window.removeEventListener('scroll', handleScroll);
+          }
+        });
+      }, observerOptions);
 
-      textElement.style.color = `rgba(0, 0, 0, ${scrollPercentage})`;
+      observer.observe(triggerSection);
+
+      function handleScroll() {
+        const rect = triggerSection.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const elementTop = rect.top + scrollTop;
+        const elementBottom = elementTop + triggerSection.clientHeight;
+
+        const scrollPercent = Math.min(Math.max((scrollTop - elementTop) / (elementBottom - elementTop), 0), 1) * 100;
+
+        // Adjust background position based on scroll percentage
+        const backgroundPosition = `${scrollPercent}% 0%`;
+        textElement.style.backgroundImage = `linear-gradient(to right, red ${scrollPercent}%, transparent ${scrollPercent}%)`;
+      }
     });
   </script>
 </body>

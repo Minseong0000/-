@@ -1,62 +1,51 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Background Change Example</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      transition: background-color 0.5s ease;
-    }
-
-    .section {
-      height: 100vh;
+      height: 200vh;
+      /* Make the page scrollable */
+      background: #fff;
+      margin: 0;
+      font-family: Arial, sans-serif;
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-size: 2em;
-      color: white;
+      align-items: center;
     }
 
-    .section-1 {
-      background-color: #242424;
-    }
-
-    .section-2 {
-      background-color: #f0f0f0;
+    .text {
+      font-size: 148px;
+      /* font-weight: bold; */
+      background-image: linear-gradient(to right, red 0%, red 0%);
+      -webkit-background-clip: text;
+      -webkit-text-stroke: 2px;
+      -webkit-text-stroke-color: #000;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+      /* Ensure text stays on one line */
+      transition: background-position 0.3s;
     }
   </style>
+  <title>Scroll Change Text Color</title>
 </head>
 
 <body>
-  <div class="section section-1">
-    Section 1
-  </div>
-  <div class="section section-2">
-    Section 2
-  </div>
+  <div class="text" id="text">Scroll to fill me up!</div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const section2 = document.querySelector('.section-2');
+    window.onscroll = function () {
+      var textElement = document.getElementById("text");
+      var scrollPosition = window.scrollY;
+      var documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var scrollPercent = (scrollPosition / documentHeight) * 100;
 
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            document.body.style.backgroundColor = '#f0f0f0';
-          } else {
-            document.body.style.backgroundColor = '#242424';
-          }
-        });
-      }, {
-        root: null,
-        threshold: 0,
-        rootMargin: '-50% 0px -50% 0px'
-      });
-
-      observer.observe(section2);
-    });
+      // Adjust background-position based on scroll percentage
+      // var backgroundPosition = `${scrollPercent}% 0%`;
+      textElement.style.backgroundImage = `linear-gradient(to right, red ${scrollPercent}%, transparent ${scrollPercent}%)`;
+    }
   </script>
 </body>
 

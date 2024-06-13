@@ -39,9 +39,39 @@ html {
 .fixed-position {
   position: fixed;
 }
+
 .capitalize {
   text-transform: capitalize;
 }
+
 .uppercase {
   text-transform: uppercase;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.tall {
+  height: 700px;
+}
+
+.short {
+  height: 330px;
+}
+
+.span74 {
+  grid-row-end: span 74;
+}
+
+.span37 {
+  grid-row-end: span 37;
+}
+
+.span4 {
+  grid-row-end: span 4;
 }

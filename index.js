@@ -1,41 +1,103 @@
 // ***** vertical progress-bar *****
-const progress = () => {
-  // 문서 전체 높이. 스크롤바로 숨겨진 부분까지 포함
-  const scrollHtjQ = $(document).height();
-  const scrollHtJs = document.documentElement.scrollHeight;
-  // console.log(scrollHtjQ, scrollHtJs);
+document.addEventListener("DOMContentLoaded", function () {
+  const jobsSection = document.querySelector(".jobs");
 
-  // 스크롤바 미포함 브라우저 내부 높이
-  const clientHtjQ = $(window).height();
-  const clientHtJs = document.documentElement.clientHeight;
-  console.log(clientHtjQ, clientHtJs);
+  const progress = () => {
+    // 문서 전체 높이. 스크롤바로 숨겨진 부분까지 포함
+    const scrollHtJs = document.documentElement.scrollHeight;
+    const visualHt = document.querySelector(".main-visual").scrollHeight;
 
-  const total = scrollHtJs - clientHtJs;
+    // 스크롤바 미포함 브라우저 내부 높이
+    const clientHtjQ = $(window).height();
+    const clientHtJs = document.documentElement.clientHeight;
+    console.log(clientHtjQ, clientHtJs);
 
-  const preWt = (scrollY / total) * 100;
+    // .jobs 섹션의 top이 뷰포트의 top을 지난 경우에만 프로그레스 바 업데이트
+    const jobsTop = jobsSection.getBoundingClientRect().top;
+    const scrollY = window.scrollY - visualHt;
 
-  $(".progress-bar").css({ width: preWt + "%" });
-};
+    if (jobsTop <= 0) {
+      const total = scrollHtJs - clientHtJs - visualHt;
 
-// addEventListener('scroll', () => {})
-$(window).on("scroll", () => {
-  requestAnimationFrame(progress);
+      const preWt = (scrollY / total) * 100;
+
+      $(".progress-bar").css({ width: preWt + "%" });
+    } else {
+      // 스크롤이 .jobs 섹션 이전으로 돌아간 경우, 프로그레스 바 숨기기
+      $(".progress-bar").css({ width: "0%" });
+    }
+  };
+
+  $(window).on("scroll", () => {
+    requestAnimationFrame(progress);
+  });
+});
+// ***** circular progress-bar *****
+document.addEventListener("DOMContentLoaded", function () {
+  const jobsSection = document.querySelector(".jobs");
+  const visualHt = document.querySelector(".main-visual").scrollHeight;
+
+  let scrollPercentage = () => {
+    let scrollProgress = document.getElementById("progress");
+    let progressValue = document.getElementById("progress-value");
+    let pos = document.documentElement.scrollTop - visualHt;
+    let calcHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight -
+      visualHt;
+    let scrollValue = Math.round((pos * 100) / calcHeight);
+
+    // Check the position of the .jobs section
+    let jobsTop = jobsSection.getBoundingClientRect().top;
+
+    if (jobsTop <= 0) {
+      scrollProgress.style.background = `conic-gradient(red ${scrollValue}%, transparent ${scrollValue}%)`;
+      progressValue.textContent = `${scrollValue}%`;
+    } else {
+      scrollProgress.style.background = `conic-gradient(transparent 0%, transparent 100%)`;
+      progressValue.textContent = ``;
+    }
+  };
+
+  window.onscroll = scrollPercentage;
 });
 
-// ***** circular progress-bar *****
-let scrollPercentage = () => {
-  let scrollProgress = document.getElementById("progress");
-  let progressValue = document.getElementById("progress-value");
-  let pos = document.documentElement.scrollTop;
-  let calcHeight =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  let scrollValue = Math.round((pos * 100) / calcHeight);
+//li reveal
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+  const listItems = document.querySelectorAll(
+    ".side-bar .progress .sec-title li"
+  );
 
-  scrollProgress.style.background = `conic-gradient(red ${scrollValue}%, transparent ${scrollValue}%)`;
-};
-window.onscroll = scrollPercentage;
-// window.onload = scrollPercentage;
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver(showListItem, options);
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+
+  function showListItem(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Get the index of the current section
+        const index = Array.from(sections).indexOf(entry.target) - 1; // Start from second section
+
+        // Remove the .show class from all li elements
+        listItems.forEach((item) => item.classList.remove("show"));
+
+        // Add the .show class to the corresponding li element
+        if (index >= 0 && listItems[index]) {
+          listItems[index].classList.add("show");
+        }
+      }
+    });
+  }
+});
 
 // ***** video pin *****
 gsap.registerPlugin(ScrollTrigger);
@@ -44,7 +106,7 @@ gsap.to(".main-visual", {
   scrollTrigger: {
     trigger: ".main-visual",
     start: "top top",
-    end: "+=100px",
+    end: "+=500px",
     scrub: true,
     markers: false,
     pin: true,
@@ -74,97 +136,111 @@ $(window).on("scroll", () => {
   }
 });
 
-// slick-slider
-
-$(document).ready(function () {
-  var $slickSlider = $(".slick-slider");
-
-  $slickSlider.slick({
-    dots: false,
-    infinite: false,
-    speed: 1500,
-    slidesToShow: 1,
-    slidesToScroll: 5,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: true,
-    prevArrow: $(".slick-prev"),
-    nextArrow: $(".slick-next"),
-    cssEase: "ease",
-    variableWidth: true,
-  });
-
-  $slickSlider.on("afterChange", function (event, slick, currentSlide) {
-    if (currentSlide === slick.$slides.length - 3) {
-      setTimeout(function () {
-        $slickSlider.slick("slickGoTo", 0); // Slide back to the beginning
-      }, 2000); // Optional delay
-    }
-  });
-});
-
 // background-change
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5, // 50% threshold
+  };
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  const sectionLife = document.querySelector(".main-life");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          document.body.style.backgroundColor = "#1F3BD9";
-        } else {
-          document.body.style.backgroundColor = "#FAFAFA";
+  const observer = new IntersectionObserver(changeBackgroundColor, options);
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+
+  function changeBackgroundColor(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const newColor = entry.target.getAttribute("data-bgcolor");
+        if (newColor) {
+          document.body.style.backgroundColor = newColor;
         }
-      });
-    },
-    {
-      root: null,
-      threshold: 0,
-      rootMargin: "-50% 0px -50% 0px",
-    }
-  );
-
-  observer.observe(sectionLife);
-
-  /*   const bottomObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          document.body.style.backgroundColor = "#242424";
-        }
-      });
-    },
-    {
-      root: null,
-      threshold: 0,
-      rootMargin: "0px 0px -50% 0px",
-    }
-  );
-
-  bottomObserver.observe(sectionLife); */
+      }
+    });
+  }
 });
 
 //life-typo
-document.addEventListener("DOMContentLoaded", (event) => {
-  const lifeTypo = document.querySelector(".life-inner .life-typo p");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          lifeTypo.style.opacity = "1";
-        } else {
-          lifeTypo.style.opacity = "0";
-        }
-      });
-    },
-    {
-      root: null,
-      threshold: 0,
-      rootMargin: "-50% 0px -50% 0px",
-    }
-  );
+document.addEventListener("DOMContentLoaded", function () {
+  const targetSection = document.getElementsByClassName("main-life")[0];
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5, // 50% threshold
+  };
 
-  observer.observe(lifeTypo);
+  const observer = new IntersectionObserver(changeOpacity, options);
+  if (targetSection) {
+    observer.observe(targetSection);
+  }
+
+  function changeOpacity(entries) {
+    const entry = entries[0];
+    const content = entry.target.querySelector(".life-inner .life-typo p");
+    if (content) {
+      // 요소가 존재하는지 확인합니다
+      if (
+        entry.isIntersecting &&
+        entry.boundingClientRect.top < window.innerHeight / 2
+      ) {
+        content.style.opacity = "1";
+      } else {
+        content.style.opacity = "0";
+      }
+    }
+  }
+});
+
+//people-symbol
+document.addEventListener("DOMContentLoaded", function () {
+  const targetSection = document.getElementsByClassName("main-people")[0];
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5, // 50% threshold
+  };
+
+  const observer = new IntersectionObserver(changeStyle, options);
+  if (targetSection) {
+    observer.observe(targetSection);
+  }
+
+  function changeStyle(entries) {
+    const entry = entries[0];
+    const contents = entry.target.querySelectorAll(".content");
+    if (contents.length > 0) {
+      // 요소가 존재하는지 확인합니다
+      if (
+        entry.isIntersecting &&
+        entry.boundingClientRect.top < window.innerHeight / 2
+      ) {
+        for (let i = 0; i < contents.length; i++) {
+          const styleType = contents[i].dataset.style;
+          if (styleType === "opacity") {
+            contents[i].style.opacity = "1";
+          } else if (styleType === "color") {
+            contents[i].style.color = "#242424";
+          } else if (styleType === "border") {
+            contents[i].style.border = "2px solid #242424";
+          }
+        }
+      } else {
+        for (let i = 0; i < contents.length; i++) {
+          const styleType = contents[i].dataset.style;
+          if (styleType === "opacity") {
+            contents[i].style.opacity = "0";
+          } else if (styleType === "color") {
+            contents[i].style.color = "#fafafa";
+          } else if (styleType === "border") {
+            contents[i].style.border = "2px solid #fafafa";
+          }
+        }
+      }
+    }
+  }
 });
 
 //pin main-life
@@ -326,3 +402,61 @@ o.from(
   { y: "400%", duration: 1 },
   "third02"
 );
+
+//slick slider - story
+
+$(document).ready(function () {
+  var $slick = $(".slick-track");
+
+  $slick.slick({
+    dots: false,
+    infinite: false,
+    speed: 1500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    /*    prevArrow: $(".slick-prev"),
+    nextArrow: $(".slick-next"), */
+    cssEase: "ease",
+    variableWidth: true,
+  });
+
+  $slick.on("afterChange", function (event, slick, currentSlide) {
+    if (currentSlide === slick.$slides.length - 3) {
+      setTimeout(function () {
+        $slick.slick("slickGoTo", 0); // Slide back to the beginning
+      }, 2000); // Optional delay
+    }
+  });
+});
+
+// slick-slider
+
+$(document).ready(function () {
+  var $slickSlider = $(".slick-slider");
+
+  $slickSlider.slick({
+    dots: false,
+    infinite: false,
+    speed: 1500,
+    slidesToShow: 1,
+    slidesToScroll: 5,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    prevArrow: $(".slick-prev"),
+    nextArrow: $(".slick-next"),
+    cssEase: "ease",
+    variableWidth: true,
+  });
+
+  $slickSlider.on("afterChange", function (event, slick, currentSlide) {
+    if (currentSlide === slick.$slides.length - 3) {
+      setTimeout(function () {
+        $slickSlider.slick("slickGoTo", 0); // Slide back to the beginning
+      }, 2000); // Optional delay
+    }
+  });
+});

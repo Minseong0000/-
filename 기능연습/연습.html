@@ -4,78 +4,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section Background Color Change</title>
   <style>
     body {
-      height: 200vh;
-      /* Make the page scrollable */
-      background: #fff;
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      transition: background-color 0.5s;
+      background-color: white;
+      /* 초기 배경색 */
     }
 
-    .text {
-      font-size: 48px;
-      font-weight: bold;
-      background-image: linear-gradient(to right, red 0%, transparent 0%);
-      -webkit-background-clip: text;
-      -webkit-text-stroke: 2px;
-      -webkit-text-stroke-color: #000;
-      -webkit-text-fill-color: transparent;
-      white-space: nowrap;
-      /* Ensure text stays on one line */
-      transition: background-position 0.3s;
-    }
-
-    .trigger-section {
+    section {
       height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      font-size: 2rem;
     }
   </style>
-  <title>Scroll Change Text Color</title>
 </head>
 
 <body>
-  <div class="trigger-section" id="trigger-section">
-    <div class="text" id="text">Scroll to fill me up!</div>
-  </div>
-  <div style="height: 100vh;"></div>
-
+  <section data-bgcolor="lightcoral">Section 1</section>
+  <section data-bgcolor="lightblue">Section 2</section>
+  <section data-bgcolor="lightgreen">Section 3</section>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const textElement = document.getElementById('text');
-      const triggerSection = document.getElementById('trigger-section');
-      let observerOptions = {
-        root: null, // Use the viewport as the container
-        threshold: [0, 1] // Trigger at the start and end of the section
+    document.addEventListener('DOMContentLoaded', function () {
+      const sections = document.querySelectorAll('section');
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // 50% threshold
       };
 
-      const observer = new IntersectionObserver((entries, observer) => {
+      const observer = new IntersectionObserver(changeBackgroundColor, options);
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+
+      function changeBackgroundColor(entries) {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            window.addEventListener('scroll', handleScroll);
-          } else {
-            window.removeEventListener('scroll', handleScroll);
+            const newColor = entry.target.getAttribute('data-bgcolor');
+            if (newColor) {
+              document.body.style.backgroundColor = newColor;
+            }
           }
         });
-      }, observerOptions);
-
-      observer.observe(triggerSection);
-
-      function handleScroll() {
-        const rect = triggerSection.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const elementTop = rect.top + scrollTop;
-        const elementBottom = elementTop + triggerSection.clientHeight;
-
-        const scrollPercent = Math.min(Math.max((scrollTop - elementTop) / (elementBottom - elementTop), 0), 1) * 100;
-
-        // Adjust background position based on scroll percentage
-        const backgroundPosition = `${scrollPercent}% 0%`;
-        textElement.style.backgroundImage = `linear-gradient(to right, red ${scrollPercent}%, transparent ${scrollPercent}%)`;
       }
     });
+
   </script>
 </body>
 

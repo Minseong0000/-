@@ -21,11 +21,33 @@
   --c-wh-bk: #242424;
   --c-bk-gr: #808080;
   --c-dk-br: #F0F0F0;
+
 }
 
 /* 부드러운 스크롤 */
 html {
   scroll-behavior: smooth;
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #242424;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F0F0F0;
+}
+
+::selection {
+  background-color: var(--color-red);
+  color: #fff;
 }
 
 .flex-wrapper {

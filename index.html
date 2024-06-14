@@ -61,7 +61,7 @@
           <div class="progress-bar"></div>
         </div>
         <ul class="sec-title uppercase">
-          <li>01 . jobs</li>
+          <li class="show">01 . jobs</li>
           <li>02 . life</li>
           <li>03 . people</li>
           <li>04 . story</li>
@@ -1828,7 +1828,7 @@
     </section>
 
     <!-- recuitment -->
-    <section class="jobs uppercase">
+    <section data-bgcolor="#242424" class="jobs uppercase">
       <h2>jobs</h2>
       <div class="jobs-text-wrapper flex-wrapper">
         <p>
@@ -2188,10 +2188,10 @@
     </section>
 
     <!-- life -->
-    <section class="main-life">
+    <section data-bgcolor="#1F3BD9" class="main-life">
       <div class="life-inner">
         <div class="life-typo">
-          <p>
+          <p id="opacity">
             HEY
             <br>
             MOVE
@@ -2278,15 +2278,15 @@
     </section>
 
     <!-- people -->
-    <section class="main-people">
-      <div class="people-symbol"></div>
+    <section data-bgcolor="#fafafa" class="main-people">
+      <div class="people-symbol content" data-style="opacity"></div>
       <div class="people-inner">
-        <div class="main-title-wrapper flex-wrapper">
-          <div class="left">
+        <div class="main-title-wrapper flex-wrapper content">
+          <div class="left content" data-style="color">
             <p class="uppercase">people</p>
-            <a href="#" class="btn-people">직무소개 전체 보러가기</a>
+            <a href="#" class="btn-people content" data-style="border">직무소개 전체 보러가기</a>
           </div>
-          <div class="right">
+          <div class="right content" data-style="color">
             <p class="main-title">
               함께 만들어가는 <br> 우리의 내일
             </p>
@@ -2414,14 +2414,14 @@
     </section>
 
     <!-- story -->
-    <section class="main-story">
+    <section data-bgcolor="#f0f0f0" class="main-story">
       <div class="story-inner">
         <div class="story-typo">
           <p>HEY <br>MOVE</p>
         </div>
-        <div class="story-title-wrapper">
+        <div class="story-title-wrapper flex-wrapper">
           <div class="left">
-            <p class="main-entitle">story</p>
+            <p class="main-entitle uppercase">story</p>
             <a href="#" class="btn-story">스토리 전체 보러가기</a>
           </div>
           <div class="right">
@@ -2429,9 +2429,139 @@
             <p class="main-subtitle">모빌리티에 진심인 우리의 이야기, 들어보실래요?</p>
           </div>
         </div>
-        <div class="slide-wrapper"></div>
+        <div class="slide-wrapper">
+          <div class="slick-slides">
+            <div class="story-slick-slides">
+              <div class="slick-track">
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">모비스테크</p>
+                    <p class="title">Front-Face Integrated Module | 프론트 페이스 통합 모듈</p>
+                    <p class="information">모비스테크 EP22 │ 채용브랜딩팀</p>
+                  </div>
+                </a>
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">모비스테크</p>
+                    <p class="title">In-Wheel Winter Testing | 인휠 시스템 극한 환경 테스트</p>
+                    <p class="information">모비스테크 EP23 │ 채용브랜딩팀</p>
+                  </div>
+                </a>
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">므브스뉴스</p>
+                    <p class="title">꽁꽁 얼어붙은 인재 시장 위로 에이전트가 날아다닙니다</p>
+                    <p class="information">므브스뉴스 │ EP.34</p>
+                  </div>
+                </a>
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">므브스뉴스</p>
+                    <p class="title">모비스 공인 발명왕 등장 특허 1년에 5개는 기본?!</p>
+                    <p class="information">므브스뉴스 │ EP.33</p>
+                  </div>
+                </a>
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">므브스뉴스</p>
+                    <p class="title">모비스에 SPA 영어 시험 만점자가?</p>
+                    <p class="information">므브스뉴스 │ EP.32</p>
+                  </div>
+                </a>
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">티키타카</p>
+                    <p class="title">왜 화이트 해커를 키워요? 사이버 보안의 프론티어 CQA셀</p>
+                    <p class="information">SW혁신전략섹터 │ CQA셀</p>
+                  </div>
+                </a>
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">티키타카</p>
+                    <p class="title">대기업 입사하더니 롤 대회 우승한 모비스 조향SW설계셀</p>
+                    <p class="information">조향전장섹터 │ 조향SW설계셀</p>
+                  </div>
+                </a>
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">티키타카</p>
+                    <p class="title">선택이 아닌 필수가 되어버린 기업 인기팀 ESG 부서</p>
+                    <p class="information">ESG추진사무국 │ ESG기획팀</p>
+                  </div>
+                </a>
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">모비스테크</p>
+                    <p class="title">Silent Driving with Active Road Noise Cancellation(ARNC)</p>
+                    <p class="information">모비스테크 EP21 │ 채용브랜딩팀</p>
+                  </div>
+                </a>
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">드로잉터뷰</p>
+                    <p class="title">변하는 자동차 패러다임 속 문제 해결사는?</p>
+                    <p class="information">MCU아키텍처셀 │ 유한상 책임연구원</p>
+                  </div>
+                </a>
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">드로잉터뷰</p>
+                    <p class="title">광학이 초면이어도 지원 가능? 리어램프광학셀은 대환영!? </p>
+                    <p class="information">리어램프광학셀 │ 노하나 책임연구원</p>
+                  </div>
+                </a>
+                <a href="#" class="slide-item">
+                  <div class="img-wrapper">
+                    <div class="img"></div>
+                  </div>
+                  <div class="txt-wrapper">
+                    <p class="category">드로잉터뷰</p>
+                    <p class="title">시스템 엔지니어의 모든 것!</p>
+                    <p class="information">램프전자제어셀 │ 주환엽 책임연구원</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="slide-control"></div>
+          </div>
+        </div>
       </div>
     </section>
+
+
   </main>
   <footer>
     <div class="footer-btn-wrapper">
@@ -2444,6 +2574,56 @@
       <div class="circular-progress-wrapper" id="progress">
         <div class="arrow-top"></div>
         <span id="progress-value"></span>
+      </div>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-top flex-wrapper">
+        <div class="footer-logo"></div>
+        <div class="footer-contents flex-wrapper">
+          <div class="footer-list">
+            <p class="title">Career MOBIS</p>
+            <ul>
+              <li><a href="#">개인정보 처리방침</a></li>
+              <li><a href="#">이메일 무단 수집거부</a></li>
+            </ul>
+          </div>
+          <div class="footer-list family">
+            <p class="title">Family Site</p>
+            <ul>
+              <li><a href="#">현대모비스 홈페이지</a></li>
+              <li><a href="#">현대모비스 사회공헌페이지</a></li>
+              <li><a href="#">모비스 라이브</a></li>
+              <li><a href="#">현대모비스 피버스</a></li>
+              <li><a href="#">현대자동차 그룹</a></li>
+            </ul>
+          </div>
+          <div class="footer-list sns">
+            <p class="title">SNS Channel</p>
+            <ul class="flex-wrapper">
+              <li>
+                <a href="#"><i class="ico-youtube"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="ico-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="ico-linked-in"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="ico-kakaotalk"></i></a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="footer-typo">
+          <div class="typo"></div>
+        </div>
+      </div>
+      <div class="footer-bottom flex-wrapper">
+        <p class="copy-right">
+          COPYRIGHT©2023 Hyundai MOBIS CORP. <br>ALL RIGHTS RESERVED.
+        </p>
       </div>
     </div>
   </footer>

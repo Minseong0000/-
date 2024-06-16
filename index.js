@@ -460,3 +460,45 @@ $(document).ready(function () {
     }
   });
 });
+
+//scroll 
+
+document.addEventListener("DOMContentLoaded", function() {
+  const targetSection = document.querySelector('.jobs');
+  const otherSection = document.querySelector('.footer-btn-wrapper');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+        otherSection.classList.add('progress');
+      } else if (entry.isIntersecting) {
+        otherSection.classList.remove('progress');
+      }
+    });
+  }, {
+    rootMargin: '-100% 0px 0px 0px'
+  });
+
+  observer.observe(targetSection);
+});
+
+//bthn position
+/* document.addEventListener("DOMContentLoaded", function() {
+  const mainStory = document.querySelector('.main-story');
+  const btnWrapper = document.querySelector('.footer-btn-wrapper');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting && entry.boundingClientRect.bottom < 0) {
+        btnWrapper.classList.add('absolute');
+      } else if (entry.isIntersecting || entry.boundingClientRect.bottom >= 0) {
+        btnWrapper.classList.remove('absolute');
+      }
+    });
+  }, {
+    rootMargin: '0px 0px -100% 0px'
+  });
+
+  observer.observe(mainStory);
+});
+ */

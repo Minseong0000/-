@@ -1676,7 +1676,9 @@ main {
   place-items: center;
   transition: 1s;
 }
-
+.footer-btn-wrapper.on.absolute {
+  position: absolute;
+}
 .footer-btn-wrapper.on {
   bottom: 40px;
 }
@@ -1687,6 +1689,10 @@ main {
   display: block;
   margin-bottom: 50px;
 }
+.footer-btn-wrapper.progress .job-match p {
+  /* text-indent: -9999px; */
+  opacity: 0;
+}
 
 .footer-btn-wrapper .job-match .btn-fit {
   background-color: transparent;
@@ -1695,6 +1701,9 @@ main {
   bottom: 50px;
   right: 20px;
   opacity: 0;
+}
+.footer-btn-wrapper.progress .job-match .btn-fit {
+  opacity: 1;
 }
 
 .footer-btn-wrapper .job-match .btn-fit img {
@@ -1729,6 +1738,15 @@ main {
   font-weight: 500;
   opacity: 0;
   text-indent: -99999px;
+  /* transition: .5s; */
+}
+.footer-btn-wrapper.progress .circular-progress-wrapper #progress-value {
+  opacity: 1;
+}
+.footer-btn-wrapper.progress .circular-progress-wrapper .arrow-top {
+  background-position: top;
+  transform: rotate(180deg);
+  left: 43%;
 }
 
 .footer-btn-wrapper .circular-progress-wrapper .arrow-top {
@@ -1744,6 +1762,7 @@ main {
   /* top: 50%; */
   left: 50%;
   transform: translate(-50%, 0%);
+  transition: .5s;
 }
 
 .footer-inner {

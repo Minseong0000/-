@@ -37,10 +37,11 @@
 
 ### 4.문제 & 해결
 
-문제
+**문제**
+
 Scroll progress가 원하는 구간부터 진행이 되게 해야 했다.
 
-해결
+**해결**
 
     const  visualHt  =  document.querySelector(".main-visual").scrollHeight;
     const  scrollY  =  window.scrollY  -  visualHt;
@@ -62,10 +63,11 @@ Scroll progress가 원하는 구간부터 진행이 되게 해야 했다.
 
 ---
 
-문제
+**문제**
+
 각 섹션의 viewport 진입시 다른 배경색 설정을 해야 했다.
 
-해결
+**해결**
 
     document.addEventListener("DOMContentLoaded", function () {
         const  sections  =  document.querySelectorAll("section");

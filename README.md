@@ -8,7 +8,8 @@
 
 작업유형: 개인 프로젝트(기여도 - 100%)
 
-![Uploading 현대모비스.png…]()
+![현대모비스](https://github.com/Minseong0000/adsf/assets/160007497/7614683e-391d-4d56-ac9f-27197f254542)
+
 
 
 

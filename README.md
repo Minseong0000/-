@@ -7,7 +7,8 @@
 작업기간: 2024.06.08 ~ 2024.06.17 (9Days)
 
 작업유형: 개인 프로젝트(기여도 - 100%)
-m
+
+![Uploading 현대모비스.png…]()
 
 
 <a href="http://127.0.0.1:5500/index.html" target="_blank" style="text-decoration: none;">프로젝트 바로가기</a>

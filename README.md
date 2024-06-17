@@ -13,7 +13,6 @@
 
 
 <a href="http://127.0.0.1:5500/index.html" target="_blank" style="text-decoration: none;">프로젝트 바로가기</a>
->>>>>>> c688bcc2e7360bd3c73c9e715b07f5e26dd263f6
 
 
 ---
@@ -109,4 +108,4 @@ Scroll progress가 원하는 구간부터 진행이 되게 해야 했다.
 
 
 
-[프로젝트 바로가기](file:///C:/Users/G7/Desktop/%ED%98%84%EB%8C%80%EB%AA%A8%EB%B9%84%EC%8A%A4/adsf/index.html)
+<a href="http://127.0.0.1:5500/index.html" target="_blank" style="text-decoration: none;">프로젝트 바로가기</a>

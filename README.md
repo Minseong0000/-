@@ -10,7 +10,7 @@
 m
 
 
-[프로젝트 바로가기](file:///C:/Users/G7/Desktop/%ED%98%84%EB%8C%80%EB%AA%A8%EB%B9%84%EC%8A%A4/adsf/index.html)
+<a href="./index.html">프로젝트 바로가기</a>
 
 ---
 

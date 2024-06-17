@@ -90,6 +90,9 @@ Scroll progress가 원하는 구간부터  진행이 되게 해야 했다.
 	});	
 
 각 섹션에 data-bgcolor의 값을 주고, forEach()를 사용하여 각 섹션이 뷰포트 진입시 설정된 data-bgcolor값의 배경색을 가지게 식을 썻다.
+![배경](https://github.com/Minseong0000/adsf/assets/160007497/8780d19d-a6b3-4d2e-8418-283d3082b745)
+![배경2](https://github.com/Minseong0000/adsf/assets/160007497/135eeafa-c1e6-4c26-9a89-2728e0510adb)
+
 
 ---
 ### - 프로젝트 후기

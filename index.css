@@ -11,6 +11,14 @@ header {
   top: 0;
   width: 100%;
   z-index: 5000;
+  height: 80px;
+  transition: .5s;
+  color: var(--color-white);
+}
+
+header.on {
+  background-color: rgba(250, 250, 250, .95);
+  color: #242424;
 }
 
 main {
@@ -29,7 +37,6 @@ main {
 
 .gnb {
   gap: 25px;
-  color: var(--color-white);
   font-family: var(--font-en-pn);
   font-size: 18px;
 }
@@ -47,6 +54,11 @@ main {
   border-radius: 36px;
   margin-left: 25px;
   color: var(--color-white);
+}
+
+.my-page.on a {
+  border: 1.5px solid #242424;
+  color: #242424;
 }
 
 /* ***** side-bar ***** */
@@ -188,18 +200,20 @@ main {
   top: 0;
   width: 100%;
   padding: 0 136px;
+  margin: 0 auto !important;
   max-width: 1600px;
-  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .main-visual .main-inner .main-slogan {
-  font-size: 154px;
+  font-size: 193px;
   color: var(--color-white);
   flex-direction: column;
   vertical-align: baseline;
   font-family: var(--font-en-ft);
   transition: 0.8s;
-  margin-top: 20%;
+  margin-top: 30%;
 }
 
 .main-visual .main-inner .main-slogan.on {
@@ -218,7 +232,7 @@ main {
   top: 60%;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 272px);
+  width: calc(100% - 200px);
   opacity: 0;
   transition: 0.8s;
 }
@@ -230,11 +244,14 @@ main {
 
 .main-visual .main-inner .main-job .job-openings {
   color: var(--color-white);
-  font-size: 38px;
+  font-size: 48px;
   font-weight: 700;
+
 }
 
-.main-visual .main-inner .main-job .job-opening p {}
+.main-visual .main-inner .main-job .job-openings p:first-child {
+  letter-spacing: -.13em;
+}
 
 .main-visual .main-inner .main-job .job-openings .now {
   font-size: 20px;
@@ -364,7 +381,10 @@ main {
   position: relative;
 }
 
-.jobs .apply-wrapper .slick-slider {}
+.jobs .apply-wrapper .slick-slider {
+  padding: 20px;
+  overflow: hidden;
+}
 
 .jobs .apply-wrapper .slick-slider .item {
   background-color: #f0f0f0;
@@ -372,6 +392,8 @@ main {
   height: 228px;
   margin: 0 16px;
   border-radius: 14px;
+  border: 3px solid transparent;
+  transition: .5s;
 }
 
 .jobs .apply-wrapper .slick-slider .item:last-child {
@@ -392,6 +414,8 @@ main {
   padding: 26px;
   position: relative;
   height: 100%;
+  overflow: hidden;
+  border-radius: 14px;
 }
 
 .jobs .apply-wrapper .slick-slider .item .item-inner .picto {
@@ -399,6 +423,18 @@ main {
   top: 26px;
   right: 19px;
   transition: .3s;
+}
+
+.jobs .apply-wrapper .slick-slider .item .item-inner .picto::before {
+  content: "";
+  width: 97px;
+  height: 60px;
+  background-color: #fafafa;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: -36px;
+  left: 17px;
+  transition: top .3s, left .3s, width .3s, height .3s;
 }
 
 .jobs .apply-wrapper .slick-slider .item .item-inner .picto .circle {
@@ -409,6 +445,7 @@ main {
   position: relative;
   align-items: center;
   justify-content: center;
+  transition: .3s;
 }
 
 .jobs .apply-wrapper .slick-slider .item .item-inner .picto .circle img {
@@ -442,7 +479,7 @@ main {
   padding-right: 74px;
   letter-spacing: -.03em;
   margin-top: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
   color: #242424;
 }
 
@@ -495,6 +532,15 @@ main {
 
 .jobs .apply-wrapper .slide-wrapper .slide-control .page-num {
   display: block;
+  font-weight: 600;
+}
+
+.jobs .apply-wrapper .slide-wrapper .slide-control .page-num #number-display {
+  color: #fafafa;
+}
+
+.jobs .apply-wrapper .slide-wrapper .slick-list {
+  overflow: visible;
 }
 
 .jobs .apply-wrapper .slide-wrapper .slide-control .page-num span {
@@ -642,6 +688,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   vertical-align: middle;
+  transition: .3s;
 }
 
 /* ***** life ***** */
@@ -1144,7 +1191,7 @@ main {
   height: 1389px;
   background-size: cover;
   position: absolute;
-  right: -40px;
+  right: 0px;
   top: -110px;
   z-index: -1;
   pointer-events: none;
@@ -1379,6 +1426,7 @@ main {
   line-height: 1.2;
   text-align: right;
   color: #242424;
+  transition: .3s;
 }
 
 .main-people .people-inner .people-contents .people-btn-wrapper .icon-btn .ico-circle {
@@ -1386,6 +1434,7 @@ main {
   width: 50px;
   height: 50px;
   color: #242424;
+  transition: .3s;
 }
 
 .main-people .people-inner .people-contents .people-btn-wrapper .icon-btn .ico-circle::before {
@@ -1676,9 +1725,11 @@ main {
   place-items: center;
   transition: 1s;
 }
+
 .footer-btn-wrapper.on.absolute {
   position: absolute;
 }
+
 .footer-btn-wrapper.on {
   bottom: 40px;
 }
@@ -1689,6 +1740,7 @@ main {
   display: block;
   margin-bottom: 50px;
 }
+
 .footer-btn-wrapper.progress .job-match p {
   /* text-indent: -9999px; */
   opacity: 0;
@@ -1699,9 +1751,10 @@ main {
   border: none;
   position: absolute;
   bottom: 50px;
-  right: 20px;
+  right: 18px;
   opacity: 0;
 }
+
 .footer-btn-wrapper.progress .job-match .btn-fit {
   opacity: 1;
 }
@@ -1740,9 +1793,11 @@ main {
   text-indent: -99999px;
   /* transition: .5s; */
 }
+
 .footer-btn-wrapper.progress .circular-progress-wrapper #progress-value {
   opacity: 1;
 }
+
 .footer-btn-wrapper.progress .circular-progress-wrapper .arrow-top {
   background-position: top;
   transform: rotate(180deg);
@@ -1892,4 +1947,157 @@ main {
 
 footer {
   background-color: #242424;
+}
+
+/* hover */
+.jobs .apply-wrapper .slick-slider .item:hover {
+  cursor: pointer;
+  border: 3px solid var(--color-red);
+  transform: translateY(-20px);
+}
+
+.jobs .apply-wrapper .slick-slider .item:hover .picto .circle {
+  width: 72px;
+  height: 72px;
+}
+
+.jobs .apply-wrapper .slick-slider .item:hover .picto .circle img {
+  transform: scale(1.4);
+}
+
+.jobs .apply-wrapper .slick-slider .item:hover .picto::before {
+  background-color: var(--color-red);
+  width: 100px;
+  height: 72px;
+  top: -34px;
+  left: 20px;
+}
+
+.jobs .apply-wrapper .slick-slider .item:hover .item-inner .top .D-day {
+  background-color: var(--color-red);
+}
+
+.jobs .apply-wrapper .slick-slider .item:hover .top .career,
+.jobs .apply-wrapper .slick-slider .item:hover .item-inner .title,
+.jobs .apply-wrapper .slick-slider .item:hover .item-inner .bottom .info-wrapper p,
+.jobs .apply-wrapper .slick-slider .item:hover .item-inner .bottom .date {
+  color: var(--color-red);
+}
+
+.jobs .apply-wrapper .slick-slider .item:hover .item-inner .picto::before {
+  background-color: var(--color-red);
+}
+
+
+/* .jobs .apply-wrapper .slide-wrapper .slick-prev:hover,
+.jobs .apply-wrapper .slide-wrapper .slick-prev:hover .slick-prev::before {
+  background-color: var(--color-red);
+} */
+
+.jobs .apply-wrapper .slide-wrapper .slick-prev:hover .ico-arrow-left {
+  background-position: bottom;
+  left: 30%;
+}
+
+/* .jobs .apply-wrapper .slide-wrapper .slick-next:hover,
+.jobs .apply-wrapper .slide-wrapper .slick-next:hover .slick-next::before {
+  background-color: var(--color-red);
+}
+ */
+.jobs .apply-wrapper .slide-wrapper .slick-next:hover .ico-arrow-right {
+  background-position: bottom;
+  left: 70%;
+}
+
+.jobs-btn-wrapper a:hover .ico-circle::before {
+  background-color: var(--color-red);
+  width: 55px;
+  height: 55px;
+}
+
+.jobs-btn-wrapper a:hover .ico-circle .ico-arrow-link {
+  background-position: bottom;
+  top: 40%;
+  left: 60%;
+}
+
+/* life hover */
+.life-inner .life-title-wrapper .title-left .btn-culture:hover {
+  color: #242424;
+  background-color: #fafafa;
+}
+
+.life-inner .btn-wrapper .btn-icon:hover span::before {
+  background-color: var(--color-red);
+  width: 55px;
+  height: 55px;
+}
+
+.life-inner .btn-wrapper .btn-icon:hover .icon-arrow-link {
+  background-position: bottom;
+  top: 40%;
+  left: 60%;
+}
+
+/* people hover */
+.main-people .btn-people:hover {
+  background-color: #242424;
+  color: #fafafa;
+}
+
+.main-people .people-contents .img:hover {
+  transform: scale(1.1);
+}
+
+.main-people .people-inner .people-contents .people-btn-wrapper .btn-more:hover .ico-circle::before {
+  width: 55px;
+  height: 55px;
+}
+
+.main-people .people-inner .people-contents .people-btn-wrapper .btn-more:hover .ico-circle .ico-plus::after {
+  width: 5px;
+  height: 5px;
+}
+
+.main-people .people-inner .people-contents .people-btn-wrapper .btn-more:hover .ico-circle .ico-plus::before {
+  width: 5px;
+  height: 5px;
+}
+
+.main-people .people-inner .people-contents .people-btn-wrapper .icon-btn:hover .ico-circle::before {
+  background-color: var(--color-red);
+}
+
+.main-people .people-inner .people-contents .people-btn-wrapper .icon-btn:hover .ico-circle .ico-arrow-link {
+  top: 40%;
+  left: 60%;
+}
+
+.main-story .story-inner .story-title-wrapper .left .btn-story:hover {
+  background-color: #242424;
+  color: #fafafa;
+}
+
+.side-bar .btn-home .nav-home:hover {
+  background-position: center;
+  cursor: pointer;
+}
+
+.side-bar .btn-job .nav-job:hover {
+  background-position: center;
+  cursor: pointer;
+}
+
+.side-bar .pagination .up .arrow-left:hover {
+  background-position: center;
+  cursor: pointer;
+}
+
+.side-bar .pagination .down .arrow-right:hover {
+  background-position: center;
+  cursor: pointer;
+}
+
+.main-story .story-inner .slide-wrapper .slick-slides .story-slick-slides .slick-track .slide-item .img-wrapper .img:hover {
+  transform: scale(1.1);
 }

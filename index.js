@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 스크롤바 미포함 브라우저 내부 높이
     const clientHtjQ = $(window).height();
     const clientHtJs = document.documentElement.clientHeight;
-    console.log(clientHtjQ, clientHtJs);
+    console.log(visualHt);
 
     // .jobs 섹션의 top이 뷰포트의 top을 지난 경우에만 프로그레스 바 업데이트
     const jobsTop = jobsSection.getBoundingClientRect().top;
@@ -60,6 +60,32 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.onscroll = scrollPercentage;
+});
+
+//header
+//브라우저를 열면 바로 읽음. 보통은 0
+let prevScroll = window.scrollY;
+console.log("prevScroll", prevScroll);
+
+$(window).on("scroll", () => {
+  //스크롤을 하면, scrollY의 값 반환
+  let currentScroll = window.scrollY;
+  console.log("currentScroll", currentScroll);
+  if (scrollY > 906) {
+    if (prevScroll > currentScroll) {
+      // $('header').show();
+      // $('header').slideDown();
+      $("header").css({ top: 0 });
+    } else {
+      // $('header').hide();
+      // $('header').slideUp();
+      $("header").css({ top: -80 });
+    }
+  }
+
+  //prev에 현재 스크롤 값 재할당
+  prevScroll = currentScroll;
+  console.log("재할당 된 prevScroll", prevScroll);
 });
 
 //li reveal
@@ -112,28 +138,6 @@ gsap.to(".main-visual", {
     pin: true,
   },
   duration: 3,
-});
-
-// ***** scroll Y *****
-const elem = document.documentElement;
-$(window).on("scroll", () => {
-  if (scrollY > 1) {
-    $(".side-bar").addClass("on");
-    $(".footer-btn-wrapper").addClass("on");
-    $(".main-visual .main-inner .main-slogan").addClass("on");
-    $(".main-visual .main-inner .main-job").addClass("on");
-    $(".main-visual .video-wrapper .youtube").addClass("on");
-    $(".side-bar .btn-home .nav-home").addClass("on");
-    $(".side-bar .btn-job .nav-job").addClass("on");
-  } else {
-    $(".side-bar").removeClass("on");
-    $(".footer-btn-wrapper").removeClass("on");
-    $(".main-visual .main-inner .main-slogan").removeClass("on");
-    $(".main-visual .main-inner .main-job").removeClass("on");
-    $(".main-visual .video-wrapper .youtube").removeClass("on");
-    $(".side-bar .btn-home .nav-home").removeClass("on");
-    $(".side-bar .btn-job .nav-job").removeClass("on");
-  }
 });
 
 // background-change
@@ -440,7 +444,7 @@ $(document).ready(function () {
   $slickSlider.slick({
     dots: false,
     infinite: false,
-    speed: 1500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 5,
     autoplay: true,
@@ -456,49 +460,165 @@ $(document).ready(function () {
     if (currentSlide === slick.$slides.length - 3) {
       setTimeout(function () {
         $slickSlider.slick("slickGoTo", 0); // Slide back to the beginning
-      }, 2000); // Optional delay
+      }); // Optional delay
     }
   });
 });
 
-//scroll 
+document.addEventListener("DOMContentLoaded", function () {
+  const numberDisplay = document.getElementById("number-display");
+  const numbers = ["01", "06", "11"];
+  let index = 0;
 
-document.addEventListener("DOMContentLoaded", function() {
-  const targetSection = document.querySelector('.jobs');
-  const otherSection = document.querySelector('.footer-btn-wrapper');
+  function changeNumber() {
+    numberDisplay.textContent = numbers[index];
+    index = (index + 1) % numbers.length;
+  }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-        otherSection.classList.add('progress');
-      } else if (entry.isIntersecting) {
-        otherSection.classList.remove('progress');
-      }
-    });
-  }, {
-    rootMargin: '-100% 0px 0px 0px'
-  });
+  // 처음 숫자 설정
+  changeNumber();
+
+  // 3.5초마다 숫자 변경
+  setInterval(changeNumber, 3000);
+});
+
+//scroll
+
+document.addEventListener("DOMContentLoaded", function () {
+  const targetSection = document.querySelector(".jobs");
+  const otherSection = document.querySelector(".footer-btn-wrapper");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+          otherSection.classList.add("progress");
+        } else if (entry.isIntersecting) {
+          otherSection.classList.remove("progress");
+        }
+      });
+    },
+    {
+      rootMargin: "-100% 0px 0px 0px",
+    }
+  );
 
   observer.observe(targetSection);
 });
 
-//bthn position
-/* document.addEventListener("DOMContentLoaded", function() {
-  const mainStory = document.querySelector('.main-story');
-  const btnWrapper = document.querySelector('.footer-btn-wrapper');
+//side-bar
+document.addEventListener("scroll", function () {
+  // .main-people 요소의 위치를 가져옴
+  const mainPeople = document.querySelector(".main-people");
+  const symbol = document.querySelector(".side-bar .btn-job .nav-job");
+  const sideBar = document.querySelector(".side-bar");
+  const Home = document.querySelector(".nav-home.on");
+  const arrowL = document.querySelector(
+    ".side-bar .pagination .up .arrow-left"
+  );
+  const arrowR = document.querySelector(
+    ".side-bar .pagination .down .arrow-right"
+  );
+  const mainPeopleRect = mainPeople.getBoundingClientRect();
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting && entry.boundingClientRect.bottom < 0) {
-        btnWrapper.classList.add('absolute');
-      } else if (entry.isIntersecting || entry.boundingClientRect.bottom >= 0) {
-        btnWrapper.classList.remove('absolute');
-      }
-    });
-  }, {
-    rootMargin: '0px 0px -100% 0px'
-  });
+  // .main-people의 상단이 뷰포트의 50%를 넘어갔는지 확인
+  const viewportHeight = window.innerHeight;
+  const triggerPoint = viewportHeight * 0.5;
 
-  observer.observe(mainStory);
+  if (mainPeopleRect.top < triggerPoint) {
+    // .main-people이 뷰포트의 50%를 넘어가면 실행
+    sideBar.style.color = "#242424"; // 예시로 배경색 변경
+    Home.style.backgroundPosition = "top";
+    arrowL.style.backgroundPosition = "top";
+    arrowR.style.backgroundPosition = "top";
+    symbol.style.backgroundPosition = "top";
+  } else {
+    // 원래 상태로 되돌림
+
+    sideBar.style.color = "";
+    Home.style.backgroundPosition = "";
+    arrowL.style.backgroundPosition = "";
+    arrowR.style.backgroundPosition = "";
+    symbol.style.backgroundPosition = "";
+  }
 });
- */
+// ***** scroll Y *****
+const elem = document.documentElement;
+$(window).on("scroll", () => {
+  if (scrollY >= 1) {
+    $(".side-bar").addClass("on");
+    $(".footer-btn-wrapper").addClass("on");
+    $(".main-visual .main-inner .main-slogan").addClass("on");
+    $(".main-visual .main-inner .main-job").addClass("on");
+    $(".main-visual .video-wrapper .youtube").addClass("on");
+    $(".side-bar .btn-home .nav-home").addClass("on");
+    $(".side-bar .btn-job .nav-job").addClass("on");
+  }
+  if (scrollY < 1) {
+    $(".side-bar").removeClass("on");
+    $(".footer-btn-wrapper").removeClass("on");
+    $(".main-visual .main-inner .main-slogan").removeClass("on");
+    $(".main-visual .main-inner .main-job").removeClass("on");
+    $(".main-visual .video-wrapper .youtube").removeClass("on");
+    $(".side-bar .btn-home .nav-home").removeClass("on");
+    $(".side-bar .btn-job .nav-job").removeClass("on");
+  }
+  if (scrollY > 906) {
+    $(".side-bar .btn-job .nav-job").removeClass("on");
+    $("header").addClass("on");
+    $(".my-page").addClass("on");
+  }
+  if (scrollY < 906) {
+    $("header").removeClass("on");
+    $(".my-page").removeClass("on");
+  }
+});
+
+//story + btn position
+
+document.addEventListener("scroll", function () {
+  // .jobs 요소의 위치를 가져옴
+  const story = document.querySelector(".main-story");
+  const jobs = document.querySelector(".jobs");
+  const arrowL = document.querySelector(
+    ".side-bar .pagination .up .arrow-left"
+  );
+  const arrowR = document.querySelector(
+    ".side-bar .pagination .down .arrow-right"
+  );
+  const sideBar = document.querySelector(".side-bar");
+  const btnWrap = document.querySelector(".footer-btn-wrapper");
+  const btnBg = document.querySelector(
+    ".footer-btn-wrapper .job-match .btn-fit"
+  );
+  const jobsRect = jobs.getBoundingClientRect();
+  const storyRect = story.getBoundingClientRect();
+
+  // .jobs의 상단이 뷰포트의 50%를 넘어갔는지 확인
+  const viewportHeight = window.innerHeight;
+  const triggerPoint = viewportHeight * 0.5;
+
+  if (jobsRect.top < triggerPoint) {
+    // .jobs이 뷰포트의 50%를 넘어가면 실행
+    arrowL.style.opacity = "1";
+  } else {
+    // 원래 상태로 되돌림
+    arrowL.style.opacity = "";
+  }
+
+  if (storyRect.top < triggerPoint) {
+    arrowR.style.opacity = "0.4";
+    sideBar.style.position = "absolute";
+    sideBar.style.top = "9300px";
+    btnWrap.style.position = "absolute";
+    btnWrap.style.top = "9750px";
+    btnBg.style.bottom = "-60px";
+  } else {
+    arrowR.style.opacity = "";
+    sideBar.style.position = "";
+    sideBar.style.top = "";
+    btnWrap.style.position = "";
+    btnWrap.style.top = "";
+    btnBg.style.bottom = "";
+  }
+});

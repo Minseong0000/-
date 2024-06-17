@@ -1,6 +1,6 @@
 ## 현대모비스 홈페이지 퍼블리싱 
 
-0. 현대모비스 홈페이지
+### 0. 현대모비스 홈페이지
 
 사용기술: HTML5, CSS3, Java-Script, GSAP
 
@@ -10,7 +10,7 @@
 m
 
 
-<a href="./index.html">프로젝트 바로가기</a>
+<a href="http://127.0.0.1:5500/index.html" target="_blank">프로젝트 바로가기</a>
 
 ---
 

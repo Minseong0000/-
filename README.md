@@ -13,3 +13,16 @@
 ---
 ### 6/12
 #### slick-slider 기능 공부 및 구현
+   
+#현대모비스 홈페이지 퍼블리싱
+0. 현대모비스 홈페이지
+
+사용기술: HTML5, CSS3, Java-Script, GSAP
+
+작업기간: 2024.06.08 ~ 2024.06.17 (9Days)
+
+작업유형: 개인 프로젝트(기여도 - 100%)
+
+
+
+[프로젝트 바로가기](file:///C:/Users/G7/Desktop/%ED%98%84%EB%8C%80%EB%AA%A8%EB%B9%84%EC%8A%A4/adsf/index.html)

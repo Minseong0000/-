@@ -29,9 +29,7 @@ m
 
 ---
 ### 3. 디렉토리 구조
-
-<img src="./assets/report/디렉토리.png" alt="디렉토리 구조">
-
+![디렉토리](https://github.com/Minseong0000/adsf/assets/160007497/f88c2fe9-f931-4892-a5d0-5b8188ccb5e9)
 ---
 ### 4.문제 & 해결
 

@@ -2,22 +2,14 @@
 
 ### 0. 현대모비스 홈페이지
 
-사용기술: HTML5, CSS3, Java-Script, GSAP
+사용기술: JavaScript, GSAP, Slick-slider, jQuery
 
 작업기간: 2024.06.08 ~ 2024.06.17 (9Days)
 
-작업유형: 개인 프로젝트(기여도 - 100%)
+작업유형: 개인 프로젝트(기여도 100%)
 
 ![현대모비스](https://github.com/Minseong0000/adsf/assets/160007497/7614683e-391d-4d56-ac9f-27197f254542)
 
-<<<<<<< HEAD
-[프로젝트 바로가기](file:///C:/Users/G7/Desktop/%ED%98%84%EB%8C%80%EB%AA%A8%EB%B9%84%EC%8A%A4/adsf/index.html)
-=======
-
-
-
-<a href="http://127.0.0.1:5500/index.html" target="_blank" style="text-decoration: none;">프로젝트 바로가기</a>
->>>>>>> c688bcc2e7360bd3c73c9e715b07f5e26dd263f6
 
 ---
 
@@ -41,10 +33,11 @@
 
 ### 4.문제 & 해결
 
-문제
+**문제**
+
 Scroll progress가 원하는 구간부터 진행이 되게 해야 했다.
 
-해결
+**해결**
 
     const  visualHt  =  document.querySelector(".main-visual").scrollHeight;
     const  scrollY  =  window.scrollY  -  visualHt;
@@ -66,10 +59,11 @@ Scroll progress가 원하는 구간부터 진행이 되게 해야 했다.
 
 ---
 
-문제
+**문제**
+
 각 섹션의 viewport 진입시 다른 배경색 설정을 해야 했다.
 
-해결
+**해결**
 
     document.addEventListener("DOMContentLoaded", function () {
         const  sections  =  document.querySelectorAll("section");
@@ -106,10 +100,10 @@ Scroll progress가 원하는 구간부터 진행이 되게 해야 했다.
 
 ### - 프로젝트 후기
 
-**끊임 없는 배움의 태도를, 겸손을, 발전을 해 나가야 한다는 것을 뼈저리게 느꼈다.**
+**나에게 없는 기술을 습득하는 방법을 깨달았다.**
 
-이번 프로젝트를 끝마치며, 웹퍼블리셔 및 개발자들이 갖추어야 할 기본적인 태도를 다시 생각 하게 됐다. 아무리 쉽다 생각한 언어들도, 파헤쳐 보면 전혀 생각지 못한 사용방법들도 있다는 것을 깨달았다. 래퍼런스 사이트에 비하면 완벽하게 구현을 못했지만, 앞으로 실력과 경험을 쌓아, 나아가 더 완성도 있는 퍼블리싱을 해보고 싶다.
+이번 프로젝트를 통해서 내가 한번도 사용해보지 못한 이펙트들을 사용할 때 이전에는 코드 하나하나를 공부하고 이해하려 했던 반면, 원본 사이트의 소스를 참고하거나 인공지능의 도움을 받아 효율적으로 새로운 기술을 참고, 습득하여 적용시키는 방법들을 배웠다.
 
 
 
-[프로젝트 바로가기](file:///C:/Users/G7/Desktop/%ED%98%84%EB%8C%80%EB%AA%A8%EB%B9%84%EC%8A%A4/adsf/index.html)
+<a href="http://127.0.0.1:5500/index.html" target="_blank" style="text-decoration: none;">프로젝트 바로가기</a>

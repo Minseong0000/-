@@ -1,4 +1,4 @@
-## 현대모비스 홈페이지 퍼블리싱 
+## 현대모비스 홈페이지 퍼블리싱
 
 0. 현대모비스 홈페이지
 
@@ -9,86 +9,87 @@
 작업유형: 개인 프로젝트(기여도 - 100%)
 m
 
-
 [프로젝트 바로가기](file:///C:/Users/G7/Desktop/%ED%98%84%EB%8C%80%EB%AA%A8%EB%B9%84%EC%8A%A4/adsf/index.html)
 
 ---
 
 ### 1. 이 프로젝트를 통해 얻고자 하는 게 무엇인가?
 
- 
-
- - 현재 가진 기술들의 활용도 및 이해를 높이고 싶었다.
- - 내가 가진 기술들로 하여금 어디까지 구현이 가능한지, 나 자신을 시험해 보고 싶었다.
+- 현재 가진 기술들의 활용도 및 이해를 높이고 싶었다.
+- 내가 가진 기술들로 하여금 어디까지 구현이 가능한지, 나 자신을 시험해 보고 싶었다.
 
 ---
+
 ### 2. 프로젝트를 하며 느낀 점
 
- - 같은 언어라도, 내가 모르는 사용 방식이 너무나 많다는 것을 알게 되었다.
- - 코드가 길면 길어질 수록, 수정을 염두에 둔 퍼블리싱 가이드라인의 중요성이 더 깊게 와 닿았다.
+- 같은 언어라도, 내가 모르는 사용 방식이 너무나 많다는 것을 알게 되었다.
+- 코드가 길면 길어질 수록, 수정을 염두에 둔 퍼블리싱 가이드라인의 중요성이 더 깊게 와 닿았다.
 
 ---
+
 ### 3. 디렉토리 구조
 
 ---
+
 ### 4.문제 & 해결
 
 문제
-Scroll progress가 원하는 구간부터  진행이 되게 해야 했다.
+Scroll progress가 원하는 구간부터 진행이 되게 해야 했다.
 
 해결
 
     const  visualHt  =  document.querySelector(".main-visual").scrollHeight;
     const  scrollY  =  window.scrollY  -  visualHt;
     if (jobsTop  <=  0) {
-    
+
     const  total  =  scrollHtJs  -  clientHtJs  -  visualHt;
     const  preWt  = (scrollY  /  total) *  100;
-    
+
     $(".progress-bar").css({ width:  preWt  +  "%" });
     } else {
     // 스크롤이 프로그래스 섹션 이전으로 돌아간 경우, 프로그레스 바 숨기기
     $(".progress-bar").css({ width:  "0%" });
     }
 
-미포함 되어야 하는 영역의 높이값을 선언후, 전체 스크롤 높이값에서 빼주었음.  
+미포함 되어야 하는 영역의 높이값을 선언후, 전체 스크롤 높이값에서 빼주었음.
 
 ---
 
-문제 
-각 섹션의 viewport 진입시 다른 배경색 설정을 해야 했다. 
+문제
+각 섹션의 viewport 진입시 다른 배경색 설정을 해야 했다.
 
 해결
 
     document.addEventListener("DOMContentLoaded", function () {
-	    const  sections  =  document.querySelectorAll("section");
-	    const  options  = {
-		    root:  null,
-		    rootMargin:  "0px",
-		    threshold:  0.5, // 50% threshold
-		};
-    
-	    const  observer  =  new  IntersectionObserver(changeBackgroundColor, options);
-   
-	    sections.forEach((section) => {
-		    observer.observe(section);
-	    });
+        const  sections  =  document.querySelectorAll("section");
+        const  options  = {
+    	    root:  null,
+    	    rootMargin:  "0px",
+    	    threshold:  0.5, // 50% threshold
+    	};
 
-	    function  changeBackgroundColor(entries) {
-		    entries.forEach((entry) => {
-			    if (entry.isIntersecting) {
-				    const  newColor  =  entry.target.getAttribute("data-bgcolor");
-				    if (newColor) {
-					    document.body.style.backgroundColor  =  newColor;
-					}  
-				}
-			});
-		}
-	});	
+        const  observer  =  new  IntersectionObserver(changeBackgroundColor, options);
+
+        sections.forEach((section) => {
+    	    observer.observe(section);
+        });
+
+        function  changeBackgroundColor(entries) {
+    	    entries.forEach((entry) => {
+    		    if (entry.isIntersecting) {
+    			    const  newColor  =  entry.target.getAttribute("data-bgcolor");
+    			    if (newColor) {
+    				    document.body.style.backgroundColor  =  newColor;
+    				}
+    			}
+    		});
+    	}
+    });
 
 각 섹션에 data-bgcolor의 값을 주고, forEach()를 사용하여 각 섹션이 뷰포트 진입시 설정된 data-bgcolor값의 배경색을 가지게 식을 썻다.
 
 ---
+
 ### - 프로젝트 후기
 
 **끊임 없는 배움의 태도를, 겸손을, 발전을 해 나가야 한다는 것을 뼈저리게 느꼈다.**

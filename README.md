@@ -106,4 +106,4 @@ Scroll progress가 원하는 구간부터 진행이 되게 해야 했다.
 
 
 
-<a href="./index.html" target="_blank" style="text-decoration: none;">프로젝트 바로가기</a>
+<a href="https://minseong0000.github.io/HyundaiMobis-publishing/" target="_blank" style="text-decoration: none;">프로젝트 바로가기</a>

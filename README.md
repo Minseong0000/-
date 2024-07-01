@@ -11,6 +11,7 @@
 ![현대모비스](https://github.com/Minseong0000/adsf/assets/160007497/7614683e-391d-4d56-ac9f-27197f254542)
 
 
+
 ---
 
 ### 1. 이 프로젝트를 통해 얻고자 하는 게 무엇인가?
@@ -106,4 +107,4 @@ Scroll progress가 원하는 구간부터 진행이 되게 해야 했다.
 
 
 
-<a href="http://127.0.0.1:5500/index.html" target="_blank" style="text-decoration: none;">프로젝트 바로가기</a>
+<a href="https://minseong0000.github.io/HyundaiMobis-publishing/" target="_blank" style="text-decoration: none;">프로젝트 바로가기</a>
